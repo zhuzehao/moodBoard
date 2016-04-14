@@ -1,0 +1,101 @@
+html,body{
+    height:100%;
+    margin: 0;
+    padding:0;
+    border:0;
+}
+img{
+    width: 25%;
+    height: 430px;
+}
+/*list布局*/
+.list1{
+    text-align: center;
+}
+.list1 .title{
+    padding-top: 180px;
+    margin-bottom: 0;
+    font-size: 40px;
+}
+.list1 .systemType{
+    margin-top: 0;
+    padding-bottom: 120px;
+}
+.list1 .userNum{
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+.list1 .userUID{
+    width: 480px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    border:2px solid rgb(0,0,0);
+    font-weight: 700;
+}
+.list1 .submit{
+    transform:translateX(-50%);
+    margin-left: 50%;
+    margin-top: 15px;
+}
+.list2{
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    bottom:76px;
+    left:0;
+    right:0;
+}
+.list2 .link{
+    border:2px solid #000;
+    float: left;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+/*footer布局*/
+.footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+}
+.footer .title{
+    margin: 0;
+    padding-left: 10px;
+    font-size: 24pt;
+}
+.footer .selecter{
+    margin: 0;
+    font-size: 24pt;
+}
+.footer .submit{
+    position: absolute;
+    right:10px;
+    bottom: 10px;
+}
+.footer .submit:first-child{
+    left:10px;
+}
+/*buttom按钮*/
+.submit{
+    display: block;
+    background: #000;
+    color: #fff;
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    outline:none;
+}
+/*5秒等待自动跳转*/
+.autoSkip{
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
