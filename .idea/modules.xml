@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/moodboard system flow.iml" filepath="$PROJECT_DIR$/.idea/moodboard system flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/moodBoard.iml" filepath="$PROJECT_DIR$/.idea/moodBoard.iml" />
     </modules>
   </component>
 </project>
