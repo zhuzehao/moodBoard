@@ -6,9 +6,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461026962552" ignored="false" />
     <file path="/index.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460704500615" ignored="false" />
-    <file path="/main.css" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461050476733" ignored="false" />
+    <file path="/main.css" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461055474943" ignored="false" />
     <file path="$PROJECT_DIR$/../educationApp/gui/angular/index.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460689486877" ignored="false" />
-    <file path="/choosePic.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461049052088" ignored="false" />
+    <file path="/choosePic.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461055128003" ignored="false" />
     <file path="/autoSkip.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460710465047" ignored="false" />
     <file path="/login.html" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460706524488" ignored="false" />
     <file path="/models.js" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460710624193" ignored="false" />
@@ -25,7 +25,7 @@
     <file path="/a.dummy" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1460692930308" ignored="false" />
     <file path="/controllers.js" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461029608302" ignored="false" />
     <file path="/items.json" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461029634627" ignored="false" />
-    <file path="/directives.js" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461050377947" ignored="false" />
+    <file path="/directives.js" changelist="712f9200-bcec-4645-a35c-e7ab6eadd1d2" time="1461056072021" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,19 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/css/src/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="19" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="directives.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular/js/src/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="63" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.7788104">
+            <state line="32" column="56" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.36802974">
               <folding />
             </state>
           </provider>
@@ -393,7 +384,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -558,6 +549,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/angular/css/src/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="46" selection-start="806" selection-end="806" vertical-scroll-proportion="0.18959108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angular/views/choosePic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="25" selection-start="128" selection-end="128" vertical-scroll-proportion="-1.3076923">
@@ -565,16 +563,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/css/src/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="19" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular/js/src/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="63" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.7788104">
+        <state line="32" column="56" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.36802974">
           <folding />
         </state>
       </provider>

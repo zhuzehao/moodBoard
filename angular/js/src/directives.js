@@ -11,18 +11,26 @@ directives.directive("controlScroll", ["$timeout","$window","$document","Clothes
         return {
             link: function(scope, element, attrs) {
                 var elem=element[0],
-                    clientH=elem.clientHeight,
-                    oldScrollTop=0;
+                    clientH=0,
+                    oldScrollTop= 0;
 
                 var mousewheelEvt= $document[0].onmousewheel !== undefined ? "mousewheel" : "DOMMouseScroll";
                 var mousewheelHandler=function (evt) {
                     evt = window.event || evt;
+
+                    //兼容ie
+                    if(evt.preventDefault){
+                        evt.preventDefault();
+                    }else{
+                        evt.returnValue=false;
+                    }
+
+                    clientH=elem.clientHeight;
                     if(evt.wheelDelta <0 || evt.detail>0){
                         //下滚
-                        if(oldScrollTop+clientH<=elem.scrollHeight){
-                            elem.scrollTop=oldScrollTop+clientH;
+                        if(oldScrollTop+clientH<=elem.scrollHeight+1){
+                            elem.scrollTop=oldScrollTop+(clientH%2==0?clientH:clientH-1);
                             oldScrollTop=elem.scrollTop;
-                            console.log(oldScrollTop);
                             if(Storage.lastLoadedCount!=Config.hasNoMoreFlag){
                                 Clothes.query(function(data){
                                     scope.items=scope.items.concat(data.items);
@@ -33,20 +41,11 @@ directives.directive("controlScroll", ["$timeout","$window","$document","Clothes
                             }
                         }
                     }else{
-                        if(oldScrollTop-clientH>=0){
-                            elem.scrollTop=oldScrollTop-clientH;
+                        if(oldScrollTop-clientH>=-1){
+                            elem.scrollTop=oldScrollTop-(clientH%2==0?clientH:clientH-1);
                             oldScrollTop=elem.scrollTop;
-                            console.log(oldScrollTop);
                         }
                     }
-
-                    //兼容ie
-                    if(evt.preventDefault){
-                        evt.preventDefault();
-                    }else{
-                        evt.returnValue=false;
-                    }
-                    //evt.preventDefault();
                 };
 
                 $window.addEventListener(mousewheelEvt, mousewheelHandler);
