@@ -50,7 +50,7 @@ h1,h2,h3,h4,h5{
     white-space: nowrap;
 }
 .main{
-    overflow: hidden;
+    overflow:hidden;
     left:0px;
     top:0px;
     bottom:80px;
@@ -113,9 +113,9 @@ h1,h2,h3,h4,h5{
     height: 100%;
 }
 .list img{
-    float: left;
     box-sizing: border-box;
     display: block;
+    float: left;
     width: 25%;
     height: 50%;
 }

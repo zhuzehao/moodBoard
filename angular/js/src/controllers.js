@@ -15,13 +15,16 @@ controllers.controller("login",['$scope',"Config",
             $scope.mainVars.contentTemplate=Config.viewUrls.choosePic;
         }
 }]);
-controllers.controller("choosePic",['$scope',"Config","Clothes",
-    function($scope,Config,Clothes){
+controllers.controller("choosePic",['$scope',"Config","Clothes","Storage",
+    function($scope,Config,Clothes,Storage){
         $scope.showSubmit=false;
-        $scope.listTop="top:0px";
 
         Clothes.query(function(data){
             $scope.items=data.items;
+            if(data.hasNoMore){
+                Storage.lastLoadedCount=Config.hasNoMoreFlag;
+            }
+
         });
 
         $scope.selectPic=function(index){

@@ -1,6 +1,6 @@
-<div style="height: 100%;width:100%" ng-controller="choosePic">
-    <div class="main">
-        <div class="list abs" style="{{listTop}}">
+<div style="height: 100%;width:100%" ng-controller="choosePic" >
+    <div class="main" control-scroll>
+        <div class="list">
             <img ng-class="{active:i.selected}" ng-click="selectPic($index)" ng-src="{{i.url}}" ng-repeat="i in items">
         </div>
     </div>

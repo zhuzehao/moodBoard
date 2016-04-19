@@ -6,53 +6,50 @@
  * To change this template use File | Settings | File Templates.
  */
 var directives=angular.module("directives",["services","models"]);
-directives.directive("touchLoad", ["Clothes",
-    function (Clothes) {
+directives.directive("controlScroll", ["$timeout","$window","$document","Clothes","Config","Storage",
+    function ($timeout,$window,$document,Clothes,Config,Storage) {
         return {
             link: function(scope, element, attrs) {
-                var elem=element[0];
-                function touchStart(event){
+                var elem=element[0],
+                    clientH=elem.clientHeight,
+                    oldScrollTop=0;
 
-                }
-                function touchMove(event){
-                    event=event||window.event;
-                    event.preventDefault();
-                }
-                function touchEnd(event){
-                    Clothes.query(function(data){
-                        scope.items=scope.items.concat(data.items);
-                    });
-                }
+                var mousewheelEvt= $document[0].onmousewheel !== undefined ? "mousewheel" : "DOMMouseScroll";
+                var mousewheelHandler=function (evt) {
+                    evt = window.event || evt;
+                    if(evt.wheelDelta <0 || evt.detail>0){
+                        //下滚
+                        if(oldScrollTop+clientH<=elem.scrollHeight){
+                            elem.scrollTop=oldScrollTop+clientH;
+                            oldScrollTop=elem.scrollTop;
+                            console.log(oldScrollTop);
+                            if(Storage.lastLoadedCount!=Config.hasNoMoreFlag){
+                                Clothes.query(function(data){
+                                    scope.items=scope.items.concat(data.items);
+                                    if(data.hasNoMore){
+                                        Storage.lastLoadedCount=Config.hasNoMoreFlag;
+                                    }
+                                });
+                            }
+                        }
+                    }else{
+                        if(oldScrollTop-clientH>=0){
+                            elem.scrollTop=oldScrollTop-clientH;
+                            oldScrollTop=elem.scrollTop;
+                            console.log(oldScrollTop);
+                        }
+                    }
 
-                function touchCancel(event){
-                    event.preventDefault();
-                }
+                    //兼容ie
+                    if(evt.preventDefault){
+                        evt.preventDefault();
+                    }else{
+                        evt.returnValue=false;
+                    }
+                    //evt.preventDefault();
+                };
 
-                function touchLeave(event){
-                    event.preventDefault();
-                }
-
-                elem.addEventListener("mousedown",touchStart,false);
-                elem.addEventListener("mousemove",touchMove,false);
-                elem.addEventListener("mouseup",touchEnd,false);
-                elem.addEventListener("touchstart",touchStart,false);
-                elem.addEventListener("touchmove",touchMove,false);
-                elem.addEventListener("touchend",touchEnd,false);
-                elem.addEventListener("touchcancel",touchCancel,false);
-                elem.addEventListener("touchleave", touchLeave,false);
-
-
-                //解除事件绑定
-                scope.$on('$destroy', function () {
-                    elem.removeEventListener("mousedown",touchStart);
-                    elem.removeEventListener("mousemove",touchMove);
-                    elem.removeEventListener("mouseup",touchEnd);
-                    elem.removeEventListener("touchstart",touchStart);
-                    elem.removeEventListener("touchmove",touchMove);
-                    elem.removeEventListener("touchend",touchEnd);
-                    elem.removeEventListener("touchcancel",touchCancel);
-                    elem.removeEventListener("touchleave",touchLeave);
-                });
+                $window.addEventListener(mousewheelEvt, mousewheelHandler);
             }
         }
     }]);
